@@ -1,5 +1,6 @@
 package drcode.academy.service.impl;
 
+import drcode.academy.infra.utils.JavaTimeUtils;
 import drcode.academy.model.Aluno;
 import drcode.academy.model.AvaliacaoFisica;
 import drcode.academy.model.form.AlunoForm;
@@ -9,6 +10,7 @@ import drcode.academy.service.IAlunoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -31,9 +33,19 @@ public class AlunoServiceImpl implements IAlunoService {
         return null;
     }
 
-    @Override
+    /*@Override
     public List<Aluno> getAll() {
         return repository.findAll();
+    }*/
+
+   @Override
+    public List<Aluno> getAll(String dataNascimento) {
+       if(dataNascimento == null){
+           return repository.findAll();
+       }else{
+           LocalDate localDate = LocalDate.parse(dataNascimento, JavaTimeUtils.LOCAL_DATE_FORMATTER);
+           return repository.findByDataNascimento(localDate);
+       }
     }
 
     @Override
