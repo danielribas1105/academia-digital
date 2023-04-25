@@ -10,7 +10,6 @@ import drcode.academy.service.IAvaliacaoFisicaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -19,6 +18,7 @@ public class AvaliacaoFisicaServiceImpl implements IAvaliacaoFisicaService {
     private AvaliacaoFisicaRepository avaliacaoFisicaRepository;
     @Autowired
     private AlunoRepository alunoRepository;
+
     @Override
     public AvaliacaoFisica create(AvaliacaoFisicaForm form) {
         AvaliacaoFisica avaliacaoFisica = new AvaliacaoFisica();
