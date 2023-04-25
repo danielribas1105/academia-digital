@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/academia?useTimezone=true&serverTimezone=UTC&useLegacyDate
+    username: postgres
+    password: 1105@Drs
+  jpa:
+    showSql: true
+    hibernate:
+      ddlAuto: update
