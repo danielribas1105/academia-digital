@@ -7,9 +7,11 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import drcode.academy.infra.utils.JavaTimeUtils;
 
 import java.io.IOException;
+import java.io.Serial;
 import java.time.LocalDateTime;
 
 public class LocalDateTimeDeserializer extends StdDeserializer<LocalDateTime> {
+    @Serial
     private static final long serialVersionUID = -7209271947629593913L;
     public LocalDateTimeDeserializer() {
         super(LocalDateTime.class);
